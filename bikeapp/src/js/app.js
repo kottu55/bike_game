@@ -1,7 +1,15 @@
-const testModules = require('./test-module');
-require('../css/app.css');
 
-/********** Paste your code here! ************/
+var c = document.createElement("canvas");
+var ctx = c.getContext("2d");
+c.width = 500;
+c.height = 350;
 
-console.log('Paste your code here!');
-console.log(testModules.hello);
+document.body.appendChild(c);
+
+function loop() {
+    ctx.fillRect(0, 0, c.width, c.height);
+    requestAnimationFrame(loop);
+}
+
+loop();
+
